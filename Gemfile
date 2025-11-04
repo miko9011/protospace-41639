@@ -70,3 +70,9 @@ end
 # 画像加工用
 gem "mini_magick"
 gem "image_processing", "~> 1.2"
+
+
+
+group :production do
+  gem 'pg'
+end
