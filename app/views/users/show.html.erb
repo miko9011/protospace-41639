@@ -1,0 +1,32 @@
+<main class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="user__name"><%= @user.name %> さんのプロフィール</h2>
+
+      <table class="user__table">
+        <tr>
+          <th class="table__col1">プロフィール</th>
+          <td class="table__col2"><%= @user.profile %></td>
+        </tr>
+        <tr>
+          <th class="table__col1">職業</th>
+          <td class="table__col2"><%= @user.occupation %></td>
+        </tr>
+        <tr>
+          <th class="table__col1">役職</th>
+          <td class="table__col2"><%= @user.position %></td>
+        </tr>
+      </table>
+
+      <h3 class="user__prototypes__title">投稿したプロトタイプ</h3>
+      <div class="user__prototypes">
+        <% @user.prototypes.each do |prototype| %>
+          <div class="prototype__card">
+            <%= link_to image_tag(prototype.image, class: "prototype__img"), prototype_path(prototype) %>
+            <p class="prototype__title"><%= prototype.title %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>
